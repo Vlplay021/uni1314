@@ -1,0 +1,253 @@
+/* Дополнительные стили для проекта */
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--light-color) !important;
+}
+
+.nav-link {
+    color: var(--light-color) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.skills-section, .projects-section {
+    padding: 50px 0;
+}
+
+.progress {
+    height: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.project-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.diary-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.status-completed {
+    color: #27ae60;
+}
+
+.status-in-progress {
+    color: #f39c12;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.student-photo {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 100%;
+}
+
+/* Дополнительные стили для проекта */
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--light-color) !important;
+}
+
+.nav-link {
+    color: var(--light-color) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.skills-section, .projects-section {
+    padding: 50px 0;
+}
+
+.progress {
+    height: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.project-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.diary-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.status-completed {
+    color: #27ae60;
+}
+
+.status-in-progress {
+    color: #f39c12;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.student-photo {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 100%;
+}
+
+.project-card img {
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color) !important;
+}
