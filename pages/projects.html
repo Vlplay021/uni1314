@@ -9,10 +9,26 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <style>
         .project-card {
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
         .project-card.hidden {
-            display: none;
+            display: none !important;
+        }
+        /* Гарантируем правильное расположение элементов в сетке */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 992px) {
+            .projects-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
     </style>
 </head>
@@ -59,9 +75,9 @@
             </div>
         </div>
         
-        <div class="row">
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card project-card h-100" data-category="html">
+        <div class="projects-container">
+            <div class="project-card" data-category="html">
+                <div class="card h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-globe fa-3x mb-3 text-primary"></i>
                         <h5 class="card-title">Личный сайт</h5>
@@ -70,8 +86,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card project-card h-100" data-category="js">
+            <div class="project-card" data-category="js">
+                <div class="card h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
                         <h5 class="card-title">Todo-приложение</h5>
@@ -80,8 +96,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card project-card h-100" data-category="react">
+            <div class="project-card" data-category="react">
+                <div class="card h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-shopping-cart fa-3x mb-3 text-primary"></i>
                         <h5 class="card-title">Интернет-магазин</h5>
@@ -90,8 +106,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card project-card h-100" data-category="bootstrap">
+            <div class="project-card" data-category="bootstrap">
+                <div class="card h-100">
                     <div class="card-body text-center p-4">
                         <i class="fas fa-palette fa-3x mb-3 text-primary"></i>
                         <h5 class="card-title">Портфолио</h5>
@@ -202,20 +218,37 @@
                     
                     const filterValue = this.getAttribute('data-filter');
                     
-                    // Фильтрация проектов
+                    // Сначала показываем все карточки
                     projectCards.forEach(card => {
-                        if (filterValue === 'all') {
-                            card.classList.remove('hidden');
-                        } else {
-                            if (card.getAttribute('data-category') === filterValue) {
-                                card.classList.remove('hidden');
-                            } else {
+                        card.classList.remove('hidden');
+                    });
+                    
+                    // Если выбран не "Все", то скрываем ненужные
+                    if (filterValue !== 'all') {
+                        projectCards.forEach(card => {
+                            if (card.getAttribute('data-category') !== filterValue) {
                                 card.classList.add('hidden');
                             }
-                        }
-                    });
+                        });
+                    }
+                    
+                    // Перестраиваем порядок отображения
+                    rearrangeProjects();
                 });
             });
+            
+            function rearrangeProjects() {
+                const container = document.querySelector('.projects-container');
+                const visibleProjects = Array.from(projectCards).filter(card => !card.classList.contains('hidden'));
+                
+                // Очищаем контейнер
+                container.innerHTML = '';
+                
+                // Добавляем видимые проекты в начало
+                visibleProjects.forEach(project => {
+                    container.appendChild(project);
+                });
+            }
         });
     </script>
 </body>
